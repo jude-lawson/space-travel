@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Planets do
+RSpec.describe Homeworld do
   describe 'Validations' do
     it { should validate_presence_of(:name) }
   end

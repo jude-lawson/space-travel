@@ -10,12 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_14_215147) do
+ActiveRecord::Schema.define(version: 2018_06_15_034832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "captains", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "crew_members", force: :cascade do |t|
+    t.string "name"
+    t.integer "rank"
+    t.bigint "homeworld_id"
+    t.bigint "starship_id"
+    t.index ["homeworld_id"], name: "index_crew_members_on_homeworld_id"
+    t.index ["starship_id"], name: "index_crew_members_on_starship_id"
+  end
+
+  create_table "homeworlds", force: :cascade do |t|
     t.string "name"
   end
 
@@ -28,4 +41,6 @@ ActiveRecord::Schema.define(version: 2018_06_14_215147) do
     t.string "name"
   end
 
+  add_foreign_key "crew_members", "homeworlds"
+  add_foreign_key "crew_members", "starships"
 end

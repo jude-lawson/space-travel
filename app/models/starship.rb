@@ -3,5 +3,5 @@ class Starship < ApplicationRecord
 
   belongs_to :spaceport
   belongs_to :captain
-  belongs_to :planet
+  belongs_to :homeworld
 end
