@@ -7,5 +7,6 @@ RSpec.describe Captain do
 
   describe 'Relationships' do
     it { should belong_to(:starship) }
+    it { should belong_to(:homeworld) }
   end
 end
