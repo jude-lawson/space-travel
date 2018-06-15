@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_15_035928) do
+ActiveRecord::Schema.define(version: 2018_06_15_040414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,12 +34,16 @@ ActiveRecord::Schema.define(version: 2018_06_15_035928) do
 
   create_table "homeworlds", force: :cascade do |t|
     t.string "name"
+    t.float "galactic_latitude"
+    t.float "galactic_longitude"
   end
 
   create_table "spaceports", force: :cascade do |t|
     t.string "name"
     t.integer "docked_ships"
     t.bigint "homeworld_id"
+    t.float "galactic_latitude"
+    t.float "galactic_longitude"
     t.index ["homeworld_id"], name: "index_spaceports_on_homeworld_id"
   end
 
