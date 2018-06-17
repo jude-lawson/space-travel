@@ -7,7 +7,7 @@ RSpec.describe CrewMember do
   end
 
   describe 'Relationships' do
-    it { should belong_to(:ship) }
+    it { should belong_to(:starship) }
     it { should belong_to(:homeworld) }
   end
 end
