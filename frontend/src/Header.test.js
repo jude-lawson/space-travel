@@ -8,7 +8,7 @@ import NavButton from './NavButton'
 
 describe('Header', () => {
   it('should render all nav components', () => {
-    const wrapper = mount(<Header />)
+    const wrapper = mount(<Header />);
 
     expect(wrapper.contains(<button className='nav-button'>Spaceports</button>)).toEqual(true);
   });
